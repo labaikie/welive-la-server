@@ -3,6 +3,10 @@ var app              = express();
 var router           = new express.Router();
 var jwt              = require('jsonwebtoken');
 var config           = require('../config/config');
+var cors             = require('cors')
+
+// allow cross origin access
+app.use(cors());
 
 //
 // REQUIRE CONTROLLERS
