@@ -48,7 +48,7 @@ module.exports = {
 
   getListings: function(req, res) {
     User.findOne({email: req.body.email }, function(err, user) {
-      if(!err) res.json(user.listings)
+      if(!err) res.send(user.listings)
     })
   },
 
@@ -70,8 +70,9 @@ module.exports = {
   },
 
   getAnalyses: function(req, res) {
+    console.log(req.body.email)
     User.findOne({email: req.body.email }, function(err, user) {
-      if(!err) res.json(user.analyses)
+      if(!err) res.send(user.analysis)
     })
   }
 
