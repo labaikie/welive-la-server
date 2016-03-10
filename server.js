@@ -3,13 +3,14 @@
 //
 var express       = require('express');
 var app           = express();
+var dotenv        = require('dotenv');
+dotenv.config();
 var bodyParser    = require('body-parser');
 var morgan        = require('morgan');
 var mongoose      = require('mongoose');
 var cors          = require('cors');
 var routes        = require('./config/routes');
 var config        = require('./config/config');
-var dotenv        = require('dotenv');
 
 //
 // CONFIGURATION
@@ -28,7 +29,6 @@ app.use(morgan('dev'));
 app.use(cors());
 // using routes file
 app.use('/', routes);
-dotenv.config();
 
 //
 // START SERVER
